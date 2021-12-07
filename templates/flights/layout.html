@@ -18,7 +18,7 @@
 
 <body>
     <div>
-        <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+        <nav class="navbar navbar-expand-md navbar-dark bg-steel">
             <div class="container">
                 <a href="" class="navbar-brand">Logo</a>
                 <div class="navbar-nav mr-auto">
@@ -27,7 +27,12 @@
                     <a href="" class="nav-item nav-link">Flight</a>
                 </div>
                 <div class="navbar-nav">
-                    <a href="{% url 'register' %}" class="nav-item nav-link">register</a>
+                    {% if user.is_authenticated %}
+                    <a href="{% url 'logout' %}" class="nav-item nav-link">Logout</a>
+                    {% else %}
+                    <!-- <a href="{% url 'register' %}" class="nav-item nav-link">Sign Up</a> -->
+                    <a href="{% url 'login' %}" class="nav-item nav-link">Sign in</a>
+                    {% endif %}
                 </div>
             </div>
         </nav>

@@ -2,6 +2,8 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.urls import reverse
 
+from django.contrib.auth.decorators import login_required
+
 import flights
 
 # Create your views here.
@@ -26,6 +28,7 @@ def flight(request, pk):
     return render(request, 'flight.html', context)
 
 
+@login_required
 def book(request, pk):
     if request.method == 'POST':
         flight = Flight.objects.get(id=pk)

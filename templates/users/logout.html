@@ -1,0 +1,16 @@
+{% extends 'layout.html' %}
+{% block content %}
+
+<div class="row mt-3">
+    <div class="col-12 col-md-6 offset-md-3">
+        <div class="logout p-3 mt-2 bg-white rounded">
+            <h2>You have been logged out</h2>
+            <div class="border-top pt-3">
+                <small class="text-muted">
+                    <a href="{% url 'login' %}" class="ml-2">Log In Again </a>
+                </small>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
